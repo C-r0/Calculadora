@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class Calculadora {
     public static void main(String[] args) {
-
     // Cria um objeto Scanner para ler a entrada do usuário
     Scanner scanner = new Scanner(System.in);
 
@@ -15,7 +14,7 @@ public class Calculadora {
     System.out.print("");
     double numC = scanner.nextDouble();
     // Verifica se a opção escolhida for maior que 4 sendo assim invalida
-    if (numC > 4) {
+    if (numC > 4 || numC < 1) {
         System.out.print("Digite uma opção valida");
         System.exit(0);
     }
@@ -26,31 +25,19 @@ public class Calculadora {
     System.out.print("Segundo Numero: ");
     double num2 = scanner.nextDouble();
     // Variavel onde se armazena o resultado
-    double Resultado = 0;
 
     // Verifica se a opção escolhida foi 1 assim somando o resultado
     if (numC == 1) {
-        Resultado = num1 + num2;
-        System.out.print(Resultado);
-    }
-    // Verifica se a opção escolhida foi 2 assim subtraindo o resultado
-    if (numC == 2) {
-        Resultado = num1 - num2;
-        System.out.print(Resultado);
-    }
-    // Verifica se a opção escolhida foi 3 assim multiplicando o resultado
-    if (numC == 3) {
-        Resultado = num1 * num2;
-        System.out.print(Resultado);
-    }
-    // Verifica se a opção escolhida foi 4 assim dividindo o resultado
-    if (numC == 4) {
-        Resultado = num1 / num2;
-        System.out.print(Resultado);
+        System.out.printf("Soma: %2f", (num1 + num2));
+    } else if (numC == 2) { // Verifica se a opção escolhida foi 2 assim subtraindo o resultado
+        System.out.printf("Subtração: %2f", (num1 - num2));
+    } else if (numC == 3) { // Verifica se a opção escolhida foi 3 assim multiplicando o resultado
+        System.out.printf("Multiplicação: %2f", (num1 * num2));
+    } else if (numC == 4) { // Verifica se a opção escolhida foi 4 assim dividindo o resultado
+        System.out.printf("Divisão: %2f", (num1 / num2));
     }
 
     // Não se esqueça de fechar o Scanner quando não for mais necessário
     scanner.close();
-
     }
 }
